@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Signal Lost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            900: '#0f172a', 
+                            800: '#1e293b', 
+                            700: '#334155', 
+                            400: '#38bdf8', 
+                            500: '#0ea5e9', 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cyber-900 text-slate-300 font-mono flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl">
+        <!-- Error Code -->
+        <h1 class="text-6xl md:text-9xl font-bold text-white mb-4 tracking-tighter animate-pulse-fast">
+            404<span class="text-cyber-500">.</span>
+        </h1>
+
+        <!-- Terminal Window -->
+        <div class="bg-slate-900 border border-slate-700 rounded-lg shadow-2xl overflow-hidden mb-8">
+            <!-- Terminal Header -->
+            <div class="bg-slate-800 px-4 py-2 border-b border-slate-700 flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <span class="ml-2 text-xs text-slate-400">root@server:~</span>
+            </div>
+            
+            <!-- Terminal Content -->
+            <div class="p-6 font-mono text-sm md:text-base h-64 overflow-y-auto" id="terminal-content">
+                <div class="text-green-400">➜  ~ initiating handshake...</div>
+                <div class="text-slate-400">connecting to 127.0.0.1:80...</div>
+                <div class="text-green-400">success</div>
+                <div class="text-slate-400">GET /requested_resource HTTP/1.1</div>
+                <div class="text-red-500 font-bold mt-2">ERROR: ENDPOINT NOT FOUND</div>
+                <div class="text-slate-400">Diagnostic: The URL you entered does not exist in this sector.</div>
+                <div class="text-slate-400">Trace: Route failed at node &lt;user_input&gt;</div>
+                <div class="mt-4 border-l-2 border-cyber-500 pl-3 italic text-slate-500">
+                    "It's not a bug, it's an undocumented feature... or you're just lost."
+                </div>
+                <div class="mt-4 flex items-center gap-2">
+                    <span class="text-green-400">➜  ~</span>
+                    <span class="animate-pulse bg-slate-400 w-2 h-4 block"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="dark_index.html" class="flex-1 text-center bg-cyber-500 hover:bg-cyan-400 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-lg shadow-cyan-500/20 group">
+                <i class="fas fa-home mr-2 group-hover:-translate-x-1 transition-transform"></i> Return Base
+            </a>
+            <a href="javascript:history.back()" class="flex-1 text-center bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-3 px-6 rounded-lg border border-slate-700 transition-all">
+                <i class="fas fa-undo mr-2"></i> Go Back
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
